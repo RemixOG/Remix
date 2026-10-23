@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap");
+
+@import "tailwindcss";
+
+
+@theme {
+  /* ============================================================
+     LOGO SHINE ANIMATION
+     CHANGE HERE:
+     - 3.5s = Total animation duration
+     - ease-in-out = Animation smoothness
+     - infinite = Repeat forever
+     ============================================================ */
+
+  --animate-logo-shine: logo-shine 5s ease-in-out infinite;
+
+  @keyframes logo-shine {
+
+    /* START — Shine enters from the left */
+    0%, 10% {
+      transform: translateX(-150%) skewX(-20deg);
+    }
+
+    /* END — Shine exits to the right and pauses */
+    55%, 100% {
+      transform: translateX(350%) skewX(-20deg);
+    }
+  }
+}
+
+@theme {
+  --font-bricolage: "Bricolage Grotesque", sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: "Bricolage Grotesque", sans-serif;
+  background: #0a0a0a;
+  color: #ffffff;
+}
