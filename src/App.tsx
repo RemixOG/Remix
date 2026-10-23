@@ -1,5 +1,29 @@
 import remixLogo from "./assets/image.png";
+
 import { FaDiscord } from "react-icons/fa";
+
+// ============================================================
+// REMIX LETTER POSITIONS — CHANGE HERE
+//
+// x      = horizontal position
+// y      = vertical position
+// width  = letter width
+// height = letter height
+// delay  = animation delay
+//
+// These came from the alignment script and can be adjusted.
+// ============================================================
+
+// ============================================================
+// LOGO CONTAINER SIZE — CHANGE HERE
+// Must match the alignment script output.
+// ============================================================
+
+// ============================================================
+// CHANGE HERE — LOGO SETTINGS
+// ============================================================
+
+
 
 function App() {
   return (
@@ -8,8 +32,7 @@ function App() {
           BACKGROUND VIDEO
           CHANGE HERE:
           - opacity-50 = Video visibility
-          - blur-[2px] = Background blur
-          - object-cover = Fill window
+          - blur-[2px] = Video blur
           ============================================================ */}
       <video
         autoPlay
@@ -24,115 +47,61 @@ function App() {
       </video>
 
       {/* ============================================================
-          VIDEO DARK OVERLAY
-          CHANGE HERE:
-          - bg-black/35 = Darkness
-          - Lower number = Brighter video
+          VIDEO DARK OVERLAY + VIGNETTE
           ============================================================ */}
       <div className="pointer-events-none absolute inset-0 bg-black/35" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,rgba(0,0,0,0.7)_100%)]" />
 
       {/* ============================================================
-          MAIN LOGIN CONTENT
-          CHANGE HERE:
-          - gap-6 = Space between logo and card
+          MAIN CONTENT
           ============================================================ */}
       <div className="relative z-10 flex flex-col items-center justify-center gap-6">
         {/* ============================================================
-            REMIX LOGO
-            CHANGE HERE:
-            - w-[240px] = Logo size
+            ORIGINAL REMIX LOGO — STATIC
+            CHANGE HERE: w-[240px] controls the logo width
             ============================================================ */}
-        <div className="relative flex items-center justify-center">
-          <img
-            src={remixLogo}
-            alt="Project Remix"
-            className="h-auto w-[240px] object-contain"
-          />
+        {/* ============================================================
+    REMIX LOGO + METALLIC SHINE
+    CHANGE HERE:
+    - w-[300px] = Logo width
+    - top-[20px] = Vertical position
+    ============================================================ */}
+<div className="relative w-[300px] top-[20px]">
+  <img
+    src={remixLogo}
+    alt="Project Remix"
+    className="block h-auto w-full object-contain"
+  />
 
-          {/* ============================================================
-              LOGO SHINE MASK
-              Clips the shine to the logo.
-              ============================================================ */}
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-0 overflow-hidden"
-            style={{
-              maskImage: `url(${remixLogo})`,
-              maskSize: "contain",
-              maskPosition: "center",
-              maskRepeat: "no-repeat",
-              WebkitMaskImage: `url(${remixLogo})`,
-              WebkitMaskSize: "contain",
-              WebkitMaskPosition: "center",
-              WebkitMaskRepeat: "no-repeat",
-            }}
-          >
-            {/* ========================================================
-                LOGO SHINE
-                CHANGE HERE:
-                - w-[40%] = Shine width
-                - via-white = Brightness
-                - blur-[1px] = Sharpness
-                - Speed is controlled in index.css (5s)
-                ======================================================== */}
-            <div className="absolute inset-y-0 left-0 w-[40%] animate-logo-shine bg-linear-to-r from-transparent via-white to-transparent opacity-100 blur-[1px] motion-reduce:hidden" />
-          </div>
-        </div>
+  {/* Shine is masked to the original PNG transparency */}
+  <div
+    aria-hidden="true"
+    className="pointer-events-none absolute inset-0 overflow-hidden"
+    style={{
+      maskImage: `url("${remixLogo}")`,
+      WebkitMaskImage: `url("${remixLogo}")`,
+      maskSize: "100% 100%",
+      WebkitMaskSize: "100% 100%",
+      maskRepeat: "no-repeat",
+      WebkitMaskRepeat: "no-repeat",
+    }}
+  >
+    <div className="remix-metallic-shine absolute inset-0" />
+  </div>
+</div>
 
         {/* ============================================================
-            LOGIN CARD — EDIT THIS DIV BELOW
-            ============================================================
-
-            CHANGE HERE:
-            - w-[320px] = Card width
-            - p-7 = Padding
-            - rounded-xl = Corner roundness
-            - bg-[#0a0a0a]/85 = Background/transparency
-            - border-white/[0.09] = Border
-
-            SHADOW SETTINGS:
-            - 0_20px_80px = Large soft shadow
-            - rgba(0,0,0,0.75) = Large shadow darkness
-            - 0_4px_20px = Smaller shadow
-            - rgba(0,0,0,0.5) = Smaller shadow darkness
-
+            LOGIN CARD
             ============================================================ */}
-
-        {/* ▼▼▼ LOGIN CARD OPENING DIV — CHANGE SHADOW HERE ▼▼▼ */}
-        <div className="w-[320px] rounded-xl border border-white/[0.09] bg-[#0a0a0a]/85 p-7 shadow-[0_20px_80px_rgba(0,0,0,0.75),0_4px_20px_rgba(0,0,0,0.5)] backdrop-blur-xl">
-          {/* ▲▲▲ END OF LOGIN CARD OPENING DIV ▲▲▲ */}
-
-          {/* ============================================================
-              LOGIN HEADING
-              CHANGE HERE:
-              - text-[19px] = Font size
-              - tracking-[-0.8px] = Letter spacing
-              ============================================================ */}
+        <div className="animate-card-enter w-[384px] rounded-xl border border-white/[0.09] bg-[#0a0a0a]/85 p-9 shadow-[0_20px_80px_rgba(0,0,0,0.75),0_4px_20px_rgba(0,0,0,0.5)] backdrop-blur-xl">
           <h2 className="mb-1 text-[19px] font-semibold tracking-[-0.8px] text-[#f5f5f5]">
             Welcome back.
           </h2>
 
-          {/* ============================================================
-              LOGIN DESCRIPTION
-              CHANGE HERE:
-              - text-[12.5px] = Font size
-              - text-[#8a8a8a] = Color
-              - mb-6 = Bottom spacing
-              ============================================================ */}
           <p className="mb-6 text-[12.5px] leading-[1.6] text-[#8a8a8a]">
             Sign in to continue to Remix.
           </p>
 
-          {/* ============================================================
-              DISCORD LOGIN BUTTON
-              CHANGE HERE:
-              - bg-[#eeeeee] = Background
-              - hover:bg-white = Hover color
-              - py-3 = Vertical padding
-              - rounded-lg = Corners
-
-              Discord authentication is not connected yet.
-              ============================================================ */}
           <button
             type="button"
             className="group flex w-full cursor-pointer items-center justify-center gap-2.5 rounded-lg bg-[#eeeeee] px-4 py-3 text-[13px] font-semibold text-[#111111] transition-all duration-200 hover:bg-white active:scale-[0.98]"
@@ -141,7 +110,6 @@ function App() {
             Continue with Discord
           </button>
         </div>
-        {/* ▲▲▲ LOGIN CARD CLOSING DIV ▲▲▲ */}
       </div>
     </main>
   );
