@@ -28,3 +28,7 @@ dist/
 .env
 .env.*
 stellar-reference/
+stellar-reference/
+
+# Design reference files
+stellar-reference/
