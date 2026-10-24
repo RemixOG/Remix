@@ -1,0 +1,1514 @@
+
+/* remix dashboard pages — monochrome haze */
+
+.rp-app {
+  font-family: "Bricolage Grotesque", sans-serif;
+}
+
+.rp-app button,
+.rp-app input {
+  font-family: inherit;
+}
+
+.rp-content {
+  min-width: 0;
+}
+
+.rp-page {
+  min-height: 0;
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px 28px 25px;
+}
+
+.rp-page-heading {
+  margin-bottom: 20px;
+}
+
+.rp-page-heading h1 {
+  font-size: 23px;
+  font-weight: 550;
+  letter-spacing: -.6px;
+  margin: 0 0 5px;
+}
+
+.rp-page-heading p,
+.rp-section-heading p {
+  font-size: 11px;
+  color: #929299;
+  margin: 0;
+}
+
+.rp-surface {
+  background: rgba(22,23,25,.46);
+  border: 1px solid rgba(255,255,255,.095);
+  border-radius: 8px;
+  min-width: 0;
+}
+
+.rp-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 13px;
+}
+
+.rp-section-heading h2 {
+  margin: 0 0 4px;
+  font-size: 16px;
+  font-weight: 550;
+}
+
+.rp-actions {
+  display: flex;
+  gap: 5px;
+}
+
+.rp-actions button,
+.rp-icon {
+  width: 27px;
+  height: 27px;
+  display: grid;
+  place-items: center;
+  background: transparent;
+  border: 0;
+  border-radius: 5px;
+  color: #9899a0;
+  cursor: pointer;
+}
+
+.rp-actions button:hover,
+.rp-icon:hover {
+  color: #fff;
+  background: rgba(255,255,255,.06);
+}
+
+.rp-shop {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  min-height: 240px;
+}
+
+.rp-shop-compact {
+  min-height: 0;
+  height: 100%;
+  padding: 11px 13px;
+}
+
+.rp-home-lower {
+  grid-template-columns: minmax(185px,.75fr) minmax(0,1.65fr);
+}
+
+.rp-item-track {
+  display: flex;
+  gap: 9px;
+  overflow-x: auto;
+  min-height: 0;
+  flex: 1;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.rp-cosmetic {
+  min-width: 100px;
+  width: 100px;
+  flex: 0 0 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.rp-cosmetic-art {
+  height: 120px;
+  overflow: hidden;
+  background: linear-gradient(135deg,#303137,#141417);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 6px;
+}
+
+.rp-shop-compact .rp-cosmetic {
+  min-width: 88px;
+  width: 88px;
+  flex-basis: 88px;
+}
+
+.rp-shop-compact .rp-cosmetic-art {
+  flex: 1;
+  height: auto;
+  min-height: 55px;
+}
+
+.rp-cosmetic img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.rp-cosmetic strong {
+  font-size: 10px;
+  font-weight: 550;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rp-cosmetic span {
+  font-size: 10px;
+  color: #9999a0;
+}
+
+.rp-message {
+  flex: 1;
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  color: #92929a;
+  font-size: 12px;
+}
+
+.rp-button {
+  padding: 7px 13px;
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 5px;
+  background: rgba(255,255,255,.07);
+  color: white;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.rp-library-notice {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 17px;
+  margin-bottom: 23px;
+}
+
+.rp-library-notice > div {
+  flex: 1;
+}
+
+.rp-library-notice strong {
+  font-size: 13px;
+}
+
+.rp-library-notice p,
+.rp-library-notice > span {
+  margin: 5px 0 0;
+  font-size: 10px;
+  color: #8e8e95;
+}
+
+.rp-cosmetic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(104px,1fr));
+  gap: 14px;
+}
+
+.rp-cosmetic-grid .rp-cosmetic {
+  width: 100%;
+  min-width: 0;
+}
+
+.rp-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 280px;
+  padding: 9px 12px;
+  margin-bottom: 18px;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 5px;
+  color: #999;
+}
+
+.rp-search input {
+  width: 100%;
+  outline: none;
+  background: transparent;
+  border: none;
+  color: #eee;
+  font-size: 12px;
+}
+
+.rp-sidebar-bottom {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 13px;
+}
+
+.rp-sidebar-bottom button {
+  width: 35px;
+  height: 35px;
+  display: grid;
+  place-items: center;
+  background: transparent;
+  border: none;
+  color: #898991;
+  cursor: pointer;
+}
+
+.rp-sidebar-bottom button:hover,
+.rp-sidebar-bottom button.rp-friends-active {
+  color: white;
+}
+
+.rp-friends {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 64px;
+  z-index: 100;
+  width: 295px;
+  padding: 24px 18px;
+  background: #121214;
+  border-right: 1px solid rgba(255,255,255,.13);
+  box-shadow: 12px 0 30px rgba(0,0,0,.18);
+  overflow-y: auto;
+}
+
+.rp-friends-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rp-friends-subtitle,
+.rp-note {
+  color: #85858d;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.rp-friend-row {
+  width: 100%;
+  padding: 12px 2px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255,255,255,.07);
+  color: #a0a0a7;
+  text-align: left;
+  cursor: pointer;
+}
+
+.rp-friend-row img,
+.rp-leaderboard-row img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 7px;
+  background: #29292d;
+}
+
+.rp-friend-row > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.rp-friend-row strong {
+  color: #e8e8eb;
+  font-size: 12px;
+  font-weight: 550;
+}
+
+.rp-friend-row span {
+  font-size: 11px;
+}
+
+.rp-profile {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 28px;
+}
+
+.rp-profile > img {
+  width: 88px;
+  height: 88px;
+  border-radius: 12px;
+  object-fit: cover;
+  background: #29292d;
+}
+
+.rp-profile h2 {
+  font-size: 19px;
+  margin: 15px 0 4px;
+}
+
+.rp-profile > p,
+.rp-profile > span {
+  font-size: 11px;
+  color: #92929a;
+  margin: 2px 0;
+}
+
+.rp-stats {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 7px;
+  margin: 26px 0 18px;
+}
+
+.rp-stats > div {
+  padding: 11px 8px;
+  background: #1b1b1e;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rp-stats span {
+  font-size: 10px;
+  color: #92929a;
+}
+
+.rp-stats strong {
+  font-size: 15px;
+  font-weight: 550;
+}
+
+.rp-leaderboard {
+  padding: 0 17px;
+}
+
+.rp-leaderboard-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,.07);
+}
+
+.rp-leaderboard-row:last-child {
+  border-bottom: none;
+}
+
+.rp-leaderboard-row > span {
+  color: #85858d;
+  font-size: 12px;
+}
+
+.rp-leaderboard-row > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.rp-leaderboard-row strong {
+  font-weight: 550;
+  font-size: 12px;
+}
+
+.rp-leaderboard-row small {
+  color: #85858d;
+  font-size: 11px;
+}
+
+.rp-settings {
+  padding: 20px;
+}
+
+.rp-settings h2 {
+  font-size: 15px;
+  font-weight: 550;
+  margin: 0 0 14px;
+}
+
+.rp-settings label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 15px 0;
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+
+.rp-settings label span {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.rp-settings label strong {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.rp-settings label small {
+  color: #8a8a92;
+  font-size: 11px;
+}
+
+.rp-settings input {
+  accent-color: #acacb2;
+}
+
+
+
+
+/* remix — smooth friends drawer */
+@keyframes rp-drawer-open {
+  from {
+    opacity: 0;
+    transform: translate3d(-22px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes rp-drawer-close {
+  from {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(-22px, 0, 0);
+  }
+}
+
+.rp-friends-enter {
+  animation: rp-drawer-open 380ms cubic-bezier(.22,1,.36,1) both;
+}
+
+.rp-friends-exit {
+  pointer-events: none;
+  animation: rp-drawer-close 240ms cubic-bezier(.4,0,1,1) both;
+}
+
+
+/* remix — premium polish v1 */
+
+.rp-app {
+  --rp-ease: cubic-bezier(.22, 1, .36, 1);
+  --rp-soft: cubic-bezier(.25, .46, .45, .94);
+}
+
+/* Sidebar: restrained, fluid microinteractions */
+
+.rp-sidebar .remix-dashboard-navigation button,
+.rp-sidebar-bottom button {
+  position: relative;
+  transition:
+    transform 320ms var(--rp-ease),
+    color 240ms ease,
+    background-color 300ms ease,
+    border-color 300ms ease !important;
+}
+
+.rp-sidebar .remix-dashboard-navigation button:hover,
+.rp-sidebar-bottom button:hover {
+  transform: translate3d(2px,0,0) scale(1.055);
+}
+
+.rp-sidebar .remix-dashboard-navigation button:active,
+.rp-sidebar-bottom button:active {
+  transform: scale(.92);
+}
+
+.rp-sidebar .remix-dashboard-navigation button.selected {
+  color: #fff;
+  background: rgba(255,255,255,.09);
+  border-radius: 7px;
+}
+
+.rp-sidebar .remix-dashboard-navigation button.selected::before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 15px;
+  left: -9px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 5px;
+  background: #eee;
+  animation: rp-indicator-in 340ms var(--rp-ease) both;
+}
+
+@keyframes rp-indicator-in {
+  from { height: 4px; opacity: 0; }
+  to { height: 15px; opacity: 1; }
+}
+
+/* Build library */
+
+.rp-build-section {
+  width: 100%;
+  min-height: 83px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-align: left;
+  padding: 18px 20px;
+  background: rgba(255,255,255,.035);
+  border: 1px solid rgba(255,255,255,.095);
+  border-radius: 9px;
+  color: #eee;
+  cursor: pointer;
+  transition:
+    background-color 300ms ease,
+    border-color 300ms ease,
+    transform 340ms var(--rp-ease);
+}
+
+.rp-build-section:hover {
+  background: rgba(255,255,255,.065);
+  border-color: rgba(255,255,255,.17);
+}
+
+.rp-build-section-symbol {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: rgba(255,255,255,.055);
+  color: #ccc;
+}
+
+.rp-build-section-label {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.rp-build-section-label strong {
+  font-size: 13px;
+  font-weight: 550;
+}
+
+.rp-build-section-label small {
+  font-size: 11px;
+  color: #919198;
+}
+
+.rp-build-chevron {
+  color: #999;
+  transition: transform 380ms var(--rp-ease);
+}
+
+.rp-build-expanded .rp-build-chevron {
+  transform: rotate(90deg);
+}
+
+@keyframes rp-appear {
+  from { opacity: 0; transform: translate3d(0,10px,0) scale(.985); }
+  to { opacity: 1; transform: translate3d(0,0,0) scale(1); }
+}
+
+.rp-build-area {
+  margin-top: 15px;
+}
+
+.rp-build-area-enter,
+.rp-build-card-enter {
+  animation: rp-appear 430ms var(--rp-ease) both;
+}
+
+.rp-add-build {
+  width: 100%;
+  height: 168px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+  border: 1px dashed rgba(255,255,255,.19);
+  border-radius: 9px;
+  background: rgba(255,255,255,.018);
+  color: #d9d9dc;
+  cursor: pointer;
+  transition:
+    background-color 280ms ease,
+    border-color 280ms ease,
+    transform 360ms var(--rp-ease);
+}
+
+.rp-add-build:hover {
+  background: rgba(255,255,255,.045);
+  border-color: rgba(255,255,255,.35);
+  transform: translateY(-2px);
+}
+
+.rp-add-symbol {
+  font-size: 29px;
+  line-height: 1;
+  font-weight: 200;
+  color: #bbb;
+}
+
+.rp-add-build strong { font-size: 13px; font-weight: 550; }
+.rp-add-build small { font-size: 11px; color: #888890; }
+
+.rp-build-card {
+  position: relative;
+  height: 205px;
+  overflow: hidden;
+  border-radius: 9px;
+  border: 1px solid rgba(255,255,255,.15);
+  isolation: isolate;
+  background: #151517;
+}
+
+.rp-build-card > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 700ms var(--rp-ease);
+}
+
+.rp-build-card:hover > img {
+  transform: scale(1.035);
+}
+
+.rp-build-card-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,rgba(0,0,0,.78),rgba(0,0,0,.15) 85%
+  );
+}
+
+.rp-build-card-info {
+  position: absolute;
+  left: 23px;
+  bottom: 23px;
+  z-index: 1;
+}
+
+.rp-build-card-info span {
+  font-size: 11px;
+  color: #b5b5ba;
+}
+
+.rp-build-card-info h2 {
+  margin: 4px 0 7px;
+  font-size: 21px;
+  font-weight: 580;
+  letter-spacing: -.6px;
+}
+
+.rp-build-card-info p {
+  margin: 0;
+  font-size: 11px;
+  color: #b7b7bd;
+}
+
+.rp-build-card-controls {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  gap: 8px;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  transition:
+    opacity 290ms ease,
+    transform 400ms var(--rp-ease);
+}
+
+.rp-build-card:hover .rp-build-card-controls,
+.rp-build-card:focus-within .rp-build-card-controls {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.rp-build-card-controls button {
+  height: 34px;
+  min-width: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 0 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,.15);
+  color: #eee;
+  background: rgba(18,18,20,.9);
+  cursor: pointer;
+  transition:
+    background-color 220ms ease,
+    transform 280ms var(--rp-ease);
+}
+
+.rp-build-card-controls button:hover {
+  background: rgba(60,60,64,.95);
+  transform: translateY(-2px);
+}
+
+.rp-build-card-controls .rp-build-play {
+  background: #eee;
+  color: #141414;
+  border: none;
+}
+
+.rp-build-card-controls .rp-build-play:disabled {
+  opacity: .58;
+  cursor: not-allowed;
+}
+
+.rp-build-detail {
+  margin-top: 10px;
+  padding: 15px 17px;
+  border: 1px solid rgba(255,255,255,.095);
+  border-radius: 7px;
+  background: #1a1a1d;
+}
+
+.rp-build-detail strong { font-size: 12px; }
+.rp-build-detail p {
+  font-size: 11px;
+  color: #9999a0;
+  line-height: 1.5;
+}
+
+.rp-build-confirm {
+  display: flex;
+  gap: 8px;
+}
+
+.rp-build-detail button {
+  background: #2b2b2f;
+  border: 1px solid rgba(255,255,255,.1);
+  color: #eee;
+  border-radius: 5px;
+  padding: 7px 13px;
+  cursor: pointer;
+  font-size: 11px;
+}
+
+/* Premium settings switches */
+
+.rp-settings-group {
+  border: 1px solid rgba(255,255,255,.09);
+  border-radius: 9px;
+  padding: 20px 22px 6px;
+  background: rgba(255,255,255,.03);
+}
+
+.rp-settings-group > h2 {
+  font-size: 15px;
+  font-weight: 550;
+  margin: 0 0 4px;
+}
+
+.rp-settings-group > p {
+  font-size: 11px;
+  color: #919198;
+  margin: 0 0 15px;
+}
+
+.rp-setting-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 17px 0;
+  border-top: 1px solid rgba(255,255,255,.075);
+  cursor: pointer;
+}
+
+.rp-setting-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.rp-setting-copy strong {
+  font-size: 12px;
+  font-weight: 540;
+}
+
+.rp-setting-copy small {
+  font-size: 11px;
+  color: #898991;
+}
+
+.rp-switch-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.rp-switch {
+  position: relative;
+  width: 39px;
+  height: 22px;
+  flex: 0 0 39px;
+  border-radius: 50px;
+  background: #343438;
+  border: 1px solid rgba(255,255,255,.12);
+  transition:
+    background-color 340ms ease,
+    border-color 340ms ease;
+}
+
+.rp-switch-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  display: grid;
+  place-items: center;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #9a9aa1;
+  color: #141414;
+  transition:
+    transform 390ms var(--rp-ease),
+    background-color 300ms ease;
+}
+
+.rp-switch-thumb svg {
+  opacity: 0;
+  transform: scale(.5);
+  transition:
+    opacity 200ms ease,
+    transform 300ms var(--rp-ease);
+}
+
+.rp-switch-input:checked + .rp-switch {
+  background: #d8d8dc;
+  border-color: #d8d8dc;
+}
+
+.rp-switch-input:checked + .rp-switch .rp-switch-thumb {
+  transform: translateX(17px);
+  background: #171719;
+  color: white;
+}
+
+.rp-switch-input:checked + .rp-switch svg {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.rp-switch-input:focus-visible + .rp-switch {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+/* Shorter shop — no unnecessary endless cosmetic rows */
+
+.rp-shop .rp-item-track {
+  scroll-snap-type: x proximity;
+}
+
+.rp-shop .rp-cosmetic {
+  scroll-snap-align: start;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rp-app *,
+  .rp-app *::before,
+  .rp-app *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+/* remix final visual polish */
+
+/* icon-only sidebar: no outlined boxes, bars, or square backgrounds */
+.rp-sidebar .remix-dashboard-navigation button,
+.rp-sidebar-bottom button {
+  border: none !important;
+  outline: none;
+  box-shadow: none !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  color: #77777d;
+  transition:
+    color 320ms cubic-bezier(.22,1,.36,1),
+    transform 350ms cubic-bezier(.22,1,.36,1),
+    opacity 260ms ease !important;
+}
+
+.rp-sidebar .remix-dashboard-navigation button::before,
+.rp-sidebar .remix-dashboard-navigation button::after {
+  display: none !important;
+}
+
+.rp-sidebar .remix-dashboard-navigation button.selected,
+.rp-sidebar .remix-dashboard-navigation button:hover,
+.rp-sidebar-bottom button:hover {
+  color: #f1f1f3 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.rp-sidebar .remix-dashboard-navigation button:hover,
+.rp-sidebar-bottom button:hover {
+  transform: scale(1.12);
+}
+
+.rp-sidebar .remix-dashboard-navigation button:active,
+.rp-sidebar-bottom button:active {
+  transform: scale(.92);
+}
+
+.rp-sidebar .remix-dashboard-navigation button.selected svg {
+  filter: drop-shadow(0 0 5px rgba(255,255,255,.23));
+}
+
+.rp-sidebar button:focus-visible {
+  outline: 1px solid rgba(255,255,255,.5) !important;
+  outline-offset: 4px;
+}
+
+/* check-free settings switches */
+.rp-switch-thumb svg {
+  display: none !important;
+}
+
+.rp-switch {
+  border-radius: 999px;
+}
+
+.rp-switch-thumb {
+  border-radius: 999px;
+}
+
+.rp-switch-input:checked + .rp-switch .rp-switch-thumb {
+  background: #141416;
+}
+
+/* library: narrower, portrait-leaning season card */
+.rp-build-card {
+  width: 285px;
+  max-width: 100%;
+  height: 285px;
+  border-radius: 3px;
+  background: #161618;
+}
+
+.rp-build-card > img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.rp-build-card-gradient {
+  background: linear-gradient(
+    0deg,
+    rgba(0,0,0,.91) 0%,
+    rgba(0,0,0,.42) 28%,
+    transparent 70%
+  );
+}
+
+.rp-build-card-info {
+  bottom: 59px;
+  left: 17px;
+}
+
+.rp-build-card-info h2 {
+  font-size: 20px;
+  font-weight: 650;
+  margin: 0;
+}
+
+.rp-build-card-controls {
+  bottom: 12px;
+  left: 13px;
+  right: 13px;
+  justify-content: flex-start;
+}
+
+.rp-build-card-controls .rp-build-play {
+  background: #ededed !important;
+  color: #141414 !important;
+  opacity: 1 !important;
+  border: 0;
+  font-weight: 650;
+  border-radius: 3px;
+}
+
+.rp-build-card-controls .rp-build-play:disabled {
+  background: #dedede !important;
+  color: #222 !important;
+  opacity: 1 !important;
+  cursor: not-allowed;
+}
+
+.rp-build-card-controls button {
+  border-radius: 3px;
+}
+
+/* minimal Fortnite-style shop cards */
+.rp-new-shop {
+  border-radius: 0 !important;
+}
+
+.rp-new-shop .rp-item-track {
+  gap: 9px;
+}
+
+.rp-new-shop .rp-shop-tile {
+  width: 155px;
+  min-width: 155px;
+  flex: 0 0 155px;
+  overflow: hidden;
+}
+
+.rp-new-shop .rp-cosmetic-art {
+  width: 100%;
+  height: 207px;
+  min-height: 0;
+  position: relative;
+  border-radius: 0 !important;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.075);
+  background: linear-gradient(155deg, #353842, #111318 85%);
+}
+
+.rp-new-shop .rp-shop-tile img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 90%;
+  object-fit: contain;
+  object-position: center;
+  transition: transform 460ms cubic-bezier(.22,1,.36,1);
+}
+
+.rp-new-shop .rp-shop-tile:hover img {
+  transform: scale(1.045);
+}
+
+.rp-shop-tile-gradient {
+  position: absolute;
+  inset: 36% 0 0;
+  background: linear-gradient(transparent, rgba(4,6,10,.95));
+  pointer-events: none;
+}
+
+.rp-shop-tile-details {
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  bottom: 9px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: center;
+  color: #fff;
+}
+
+.rp-shop-tile-details strong {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.rp-shop-tile-details span {
+  font-size: 11px;
+  font-weight: 650;
+  color: #ddd;
+}
+
+.rp-shop-compact {
+  min-height: 0;
+}
+
+.rp-shop-compact .rp-shop-tile {
+  width: 112px;
+  min-width: 112px;
+  flex-basis: 112px;
+}
+
+.rp-shop-compact .rp-cosmetic-art {
+  height: 125px;
+}
+
+.rp-shop-compact .rp-shop-tile-details strong {
+  font-size: 10px;
+}
+
+.rp-shop-compact .rp-shop-tile-details span {
+  font-size: 10px;
+}
+
+.rp-new-shop .rp-message {
+  min-height: 90px;
+}
+
+
+/* remix smooth wheel shop v1 */
+
+/* Wheel/touchpad scrolling should follow the user's
+   actual input instead of accumulating long CSS scroll animations. */
+.rp-shop .rp-item-track {
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  scroll-behavior: auto !important;
+  scroll-snap-type: none !important;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.rp-shop .rp-item-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* No arrow controls, only refresh */
+.rp-shop .rp-actions {
+  gap: 0;
+}
+
+/* Butter-smooth image hover */
+.rp-new-shop .rp-shop-tile {
+  transition:
+    transform 380ms cubic-bezier(.22,1,.36,1),
+    border-color 250ms ease;
+}
+
+.rp-new-shop .rp-shop-tile:hover {
+  transform: translateY(-2px);
+}
+
+.rp-new-shop .rp-shop-tile img {
+  transition:
+    transform 480ms cubic-bezier(.22,1,.36,1),
+    opacity 280ms ease;
+}
+
+/* Friends: lighter interactions */
+.rp-friend-row {
+  transition:
+    background-color 260ms ease,
+    padding-left 340ms cubic-bezier(.22,1,.36,1);
+}
+
+.rp-friend-row img,
+.rp-leaderboard-row img {
+  object-fit: cover;
+  background: #242428;
+  border-radius: 5px;
+}
+
+/* Smooth drawer, without expensive animated blur */
+.rp-friends {
+  backdrop-filter: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rp-new-shop .rp-shop-tile,
+  .rp-new-shop .rp-shop-tile img {
+    transition: none !important;
+  }
+}
+
+
+/* remix — edge-to-edge shop glide v2 */
+
+/* No surrounding boxed panel */
+.rp-new-shop,
+.rp-shop,
+.rp-shop.rp-surface {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.rp-new-shop {
+  padding: 0 !important;
+  width: 100%;
+  min-width: 0;
+}
+
+.rp-new-shop .rp-section-heading {
+  padding: 0 2px 5px;
+}
+
+/* Cards reach the available width of the gallery.
+   Enough items remain offscreen to scroll through. */
+.rp-new-shop .rp-item-track {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  gap: 12px;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  scroll-behavior: auto !important;
+  scroll-snap-type: none !important;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+  padding: 0 0 5px;
+}
+
+.rp-new-shop .rp-item-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Large, sharp-edged Fortnite shop tiles */
+.rp-new-shop .rp-shop-tile {
+  flex: 0 0 clamp(210px, 36%, 320px) !important;
+  width: clamp(210px, 36%, 320px) !important;
+  min-width: 210px !important;
+  max-width: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+}
+
+.rp-new-shop .rp-shop-tile .rp-cosmetic-art {
+  width: 100%;
+  height: 310px;
+  min-height: 310px;
+  border-radius: 0 !important;
+  border: 1px solid rgba(255,255,255,.065);
+  background: linear-gradient(
+    145deg,
+    #323743 0%,
+    #1e222b 46%,
+    #080a0e 100%
+  );
+}
+
+.rp-new-shop .rp-shop-tile img {
+  width: 100%;
+  height: 89%;
+  object-fit: contain;
+  transition: transform 520ms cubic-bezier(.22,1,.36,1);
+}
+
+.rp-new-shop .rp-shop-tile:hover img {
+  transform: scale(1.045);
+}
+
+/* Larger cards within the compact home preview too */
+.rp-new-shop.rp-shop-compact .rp-shop-tile {
+  flex: 0 0 190px !important;
+  width: 190px !important;
+  min-width: 190px !important;
+}
+
+.rp-new-shop.rp-shop-compact .rp-shop-tile .rp-cosmetic-art {
+  height: 100%;
+  min-height: 155px;
+}
+
+.rp-new-shop .rp-shop-tile-details {
+  bottom: 13px;
+  left: 12px;
+  right: 12px;
+  gap: 7px;
+}
+
+.rp-new-shop .rp-shop-tile-details strong {
+  font-size: 13px;
+}
+
+.rp-new-shop .rp-shop-tile-details span {
+  font-size: 11px;
+}
+
+/* Keep button motion restrained and buttery */
+.rp-new-shop button {
+  transition:
+    opacity 260ms ease,
+    color 260ms ease,
+    transform 350ms cubic-bezier(.22,1,.36,1);
+}
+
+.rp-new-shop button:hover {
+  transform: scale(1.055);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rp-new-shop .rp-shop-tile img,
+  .rp-new-shop button {
+    transition: none !important;
+  }
+}
+
+
+/* remix profile scroll v3 */
+
+/* Pure native scrolling: no interpolation conflicts. */
+.rp-shop .rp-item-track,
+.rp-new-shop .rp-item-track {
+  scroll-behavior: auto !important;
+  scroll-snap-type: none !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+}
+
+.rp-shop .rp-item-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Full Shop keeps its larger item cards. */
+.rp-new-shop:not(.rp-shop-compact) .rp-shop-tile {
+  flex: 0 0 255px !important;
+  width: 255px !important;
+  min-width: 255px !important;
+}
+
+.rp-new-shop:not(.rp-shop-compact)
+.rp-shop-tile .rp-cosmetic-art {
+  height: 315px !important;
+  min-height: 315px !important;
+}
+
+/* Home Item Shop: smaller tiles that fit
+   the lower dashboard section. */
+.rp-new-shop.rp-shop-compact {
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.rp-new-shop.rp-shop-compact .rp-item-track {
+  flex: 1;
+  min-height: 0;
+}
+
+.rp-new-shop.rp-shop-compact .rp-shop-tile {
+  flex: 0 0 108px !important;
+  width: 108px !important;
+  min-width: 108px !important;
+}
+
+.rp-new-shop.rp-shop-compact
+.rp-shop-tile .rp-cosmetic-art {
+  height: 100% !important;
+  min-height: 90px !important;
+}
+
+.rp-new-shop.rp-shop-compact
+.rp-shop-tile-details {
+  left: 5px;
+  right: 5px;
+  bottom: 6px;
+  gap: 3px;
+}
+
+.rp-new-shop.rp-shop-compact
+.rp-shop-tile-details strong {
+  font-size: 10px !important;
+}
+
+.rp-new-shop.rp-shop-compact
+.rp-shop-tile-details span {
+  font-size: 9px !important;
+}
+
+/* Subtle, lightweight hover movement. */
+.rp-new-shop .rp-shop-tile {
+  transition: transform 320ms cubic-bezier(.22,1,.36,1);
+}
+
+.rp-new-shop .rp-shop-tile:hover {
+  transform: translateY(-2px);
+}
+
+
+/* remix borderless sidebar and vbuck prices */
+
+/* Sidebar blends directly into the content */
+.rp-sidebar,
+.remix-dashboard-sidebar {
+  border: none !important;
+  border-right: 0 !important;
+  box-shadow: none !important;
+  outline: none !important;
+  background: transparent !important;
+}
+
+/* Remove any pseudo-element used as a separator */
+.rp-sidebar::before,
+.rp-sidebar::after,
+.remix-dashboard-sidebar::before,
+.remix-dashboard-sidebar::after {
+  display: none !important;
+}
+
+/* No extra visible separator between content and sidebar */
+.rp-content,
+.remix-dashboard-content {
+  border-left: none !important;
+  box-shadow: none !important;
+}
+
+/* No sidebar active indicator line */
+.rp-sidebar .remix-dashboard-navigation button::before,
+.rp-sidebar .remix-dashboard-navigation button::after {
+  display: none !important;
+}
+
+/* Price and V-Bucks icon */
+.rp-shop-tile-details .rp-vbucks-price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  font-size: 12px;
+  font-weight: 650;
+  color: #e8e8eb;
+}
+
+.rp-shop-tile-details .rp-vbucks-icon {
+  position: static !important;
+  display: inline-block;
+  width: 16px !important;
+  height: 16px !important;
+
+  min-width: 16px;
+  min-height: 16px;
+
+  object-fit: contain !important;
+  transform: none !important;
+  flex-shrink: 0;
+
+  filter: none !important;
+  transition: none !important;
+}
+
+/* Don't enlarge the currency icon with the skin artwork */
+.rp-new-shop .rp-shop-tile:hover .rp-vbucks-icon {
+  transform: none !important;
+}
+
+.rp-shop-compact .rp-vbucks-icon {
+  width: 13px !important;
+  height: 13px !important;
+  min-width: 13px;
+  min-height: 13px;
+}
+
+.rp-shop-compact .rp-vbucks-price {
+  gap: 3px;
+  font-size: 10px;
+}

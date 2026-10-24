@@ -98,3 +98,124 @@ body {
     display: none;
   }
 }
+
+/* Remix frameless login controls */
+.remix-window-buttons {
+  position: fixed !important;
+  top: 12px !important;
+  right: 14px !important;
+  z-index: 2147483000 !important;
+  display: flex !important;
+  gap: 5px !important;
+  pointer-events: auto !important;
+}
+
+.remix-window-buttons button,
+.remix-volume-button {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: rgba(255,255,255,.85) !important;
+  border: 0 !important;
+  background: rgba(0,0,0,.35) !important;
+  cursor: pointer !important;
+  transition: color .2s, background .2s !important;
+}
+
+.remix-window-buttons button {
+  width: 34px !important;
+  height: 28px !important;
+}
+
+.remix-window-buttons button:hover {
+  background: rgba(255,255,255,.13) !important;
+  color: #fff !important;
+}
+
+.remix-window-buttons button:last-child:hover {
+  background: rgba(170,35,35,.85) !important;
+}
+
+.remix-volume-button {
+  position: fixed !important;
+  bottom: 24px !important;
+  right: 24px !important;
+  z-index: 2147483000 !important;
+  width: 38px !important;
+  height: 38px !important;
+  pointer-events: auto !important;
+}
+
+.remix-volume-button:hover {
+  background: rgba(255,255,255,.12) !important;
+}
+
+#root {
+  border-radius: 0 !important;
+}
+
+/* Clean floating controls — icons only */
+.remix-window-buttons {
+  background: transparent !important;
+  gap: 12px !important;
+}
+
+.remix-window-buttons button,
+.remix-volume-button {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  outline: none;
+  color: rgba(255,255,255,0.55) !important;
+  transition: color 180ms ease, opacity 180ms ease !important;
+}
+
+.remix-window-buttons button:hover,
+.remix-window-buttons button:last-child:hover,
+.remix-volume-button:hover {
+  background: transparent !important;
+  color: #ffffff !important;
+}
+
+.remix-window-buttons button {
+  width: 22px !important;
+  height: 28px !important;
+}
+
+.remix-volume-button {
+  width: 28px !important;
+  height: 28px !important;
+}
+
+/* Minimal floating window controls */
+.remix-window-buttons {
+  top: 15px !important;
+  right: 19px !important;
+  gap: 15px !important;
+}
+
+.remix-window-buttons button,
+.remix-volume-button {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  color: rgba(255,255,255,.62) !important;
+  transition: color .2s ease, transform .2s ease !important;
+}
+
+.remix-window-buttons button:hover,
+.remix-volume-button:hover {
+  color: #fff !important;
+  background: transparent !important;
+}
+
+.remix-window-buttons button:last-child:hover {
+  color: #ff7777 !important;
+  background: transparent !important;
+}
+
+.remix-volume-button {
+  bottom: 23px !important;
+  right: 22px !important;
+}

@@ -1,0 +1,100 @@
+
+/* Project Remix — audio-reactive login and metallic logo shine */
+
+:root {
+  --remix-beat: 0;
+}
+
+/* Very subtle audio-reactive vignette.
+   Positioned above the login background but
+   below its clickable controls. */
+.remix-login-pulse::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+
+  background: radial-gradient(
+    ellipse at 50% 55%,
+    rgba(235, 235, 245, .065),
+    rgba(180, 180, 195, .015) 34%,
+    transparent 70%
+  );
+
+  opacity: calc(.14 + var(--remix-beat) * .75);
+}
+
+/* Keep interactive login contents above the effect. */
+.remix-login-pulse > .relative {
+  position: relative;
+  z-index: 1;
+}
+
+/* Logo highlight follows the transparent Remix artwork. */
+.remix-logo-glint {
+  isolation: isolate;
+}
+
+.remix-logo-glint::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+
+  background: linear-gradient(
+    108deg,
+    transparent 0%,
+    transparent 37%,
+    rgba(255,255,255,.10) 45%,
+    rgba(255,255,255,.8) 50%,
+    rgba(255,255,255,.12) 55%,
+    transparent 63%,
+    transparent 100%
+  );
+
+  -webkit-mask-image: url("./assets/image.png");
+  mask-image: url("./assets/image.png");
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+
+  background-size: 270% 100%;
+  background-position: 180% 0;
+
+  opacity: calc(.45 + var(--remix-beat) * .55);
+
+  animation: remix-metal-shine 5.2s
+    cubic-bezier(.35,0,.65,1) infinite;
+}
+
+@keyframes remix-metal-shine {
+  0%, 12% {
+    background-position: 180% 0;
+  }
+
+  48%, 100% {
+    background-position: -80% 0;
+  }
+}
+
+/* Soft glow rises with music, without animating blur. */
+.remix-logo-glint img {
+  filter: drop-shadow(
+    0 0 calc(2px + var(--remix-beat) * 9px)
+    rgba(255,255,255,.22)
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .remix-logo-glint::after {
+    animation: none;
+    opacity: .12;
+  }
+
+  .remix-login-pulse::after {
+    display: none;
+  }
+}

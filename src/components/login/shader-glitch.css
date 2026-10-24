@@ -1,0 +1,330 @@
+/* PROJECT REMIX — SHADER LOGIN EFFECT */
+
+/* Mild UI displacement complements the actual GPU shader */
+.remix-shader-active .remix-login-card {
+  animation: remix-card-shader-failure 650ms both;
+}
+
+.remix-shader-active .remix-login-logo {
+  animation: remix-logo-shader-failure 650ms both;
+}
+
+.remix-shader-active .remix-login-button {
+  animation: remix-button-shader-confirm 650ms both;
+}
+
+@keyframes remix-card-shader-failure {
+  0%, 15% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  24% { transform: translateX(-3px); }
+  31% { transform: translateX(2px); }
+  46% { transform: translateX(-8px); }
+  53% { transform: translateX(5px); }
+  70% { transform: translateX(-13px); opacity: .85; }
+
+  100% {
+    transform: translateY(8px);
+    opacity: 0;
+  }
+}
+
+@keyframes remix-logo-shader-failure {
+  0%, 15% { opacity: 1; }
+  30% { opacity: .75; }
+  39% { opacity: 1; }
+  65% { opacity: .5; }
+  100% { opacity: 0; }
+}
+
+@keyframes remix-button-shader-confirm {
+  0% { transform: scale(1); }
+  12% { transform: scale(.975); filter: brightness(1.55); }
+  25% { transform: scale(1); filter: none; }
+  100% { transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .remix-shader-active .remix-login-card,
+  .remix-shader-active .remix-login-logo,
+  .remix-shader-active .remix-login-button {
+    animation: none;
+  }
+}
+
+
+/* ============================================================
+   REMIX LOGO — OVERLAY COLOR CORRUPTION
+   Only visible during login glitch.
+   ============================================================ */
+
+/* Tint the actual logo image with abrupt color changes */
+.remix-shader-active .remix-login-logo > img {
+  animation: remix-logo-colors 650ms steps(1, end) both;
+}
+
+/* The shine follows the same glitch timing */
+.remix-shader-active .remix-login-logo .remix-metallic-shine {
+  opacity: 0;
+}
+
+@keyframes remix-logo-colors {
+  0%, 12% {
+    filter: none;
+  }
+
+  /* Electric blue */
+  13%, 26% {
+    filter: brightness(0) saturate(100%)
+      invert(24%) sepia(100%) saturate(5500%)
+      hue-rotate(226deg) brightness(1.2);
+  }
+
+  /* Hot pink */
+  27%, 43% {
+    filter: brightness(0) saturate(100%)
+      invert(35%) sepia(100%) saturate(5100%)
+      hue-rotate(305deg) brightness(1.25);
+  }
+
+  /* Neon lime */
+  44%, 59% {
+    filter: brightness(0) saturate(100%)
+      invert(85%) sepia(85%) saturate(1300%)
+      hue-rotate(35deg) brightness(1.2);
+  }
+
+  /* Orange */
+  60%, 75% {
+    filter: brightness(0) saturate(100%)
+      invert(62%) sepia(100%) saturate(3500%)
+      hue-rotate(355deg) brightness(1.2);
+  }
+
+  /* Yellow flash */
+  76%, 87% {
+    filter: brightness(0) saturate(100%)
+      invert(90%) sepia(95%) saturate(1100%)
+      hue-rotate(345deg) brightness(1.3);
+  }
+
+  88%, 100% {
+    filter: brightness(0) saturate(100%)
+      invert(35%) sepia(100%) saturate(5100%)
+      hue-rotate(305deg);
+    opacity: 0;
+  }
+}
+
+/* ============================================================
+   REMIX — PRE-GLITCH COLOR INTRO
+   Runs BEFORE the shader glitch, not during it.
+   ============================================================ */
+
+.remix-color-intro > img {
+  animation: remix-pre-glitch-colors 650ms steps(1, end) both !important;
+}
+
+/* Temporarily hide the metallic shine during color corruption. */
+.remix-color-intro .remix-metallic-shine {
+  opacity: 0 !important;
+  animation: none !important;
+}
+
+@keyframes remix-pre-glitch-colors {
+  0%, 12% {
+    filter: none;
+  }
+
+  /* Electric blue */
+  13%, 25% {
+    filter: brightness(0) saturate(100%)
+      invert(24%) sepia(100%) saturate(5500%)
+      hue-rotate(226deg) brightness(1.2);
+  }
+
+  /* Hot pink */
+  26%, 40% {
+    filter: brightness(0) saturate(100%)
+      invert(35%) sepia(100%) saturate(5100%)
+      hue-rotate(305deg) brightness(1.25);
+  }
+
+  /* Neon lime */
+  41%, 55% {
+    filter: brightness(0) saturate(100%)
+      invert(85%) sepia(85%) saturate(1300%)
+      hue-rotate(35deg) brightness(1.2);
+  }
+
+  /* Orange */
+  56%, 69% {
+    filter: brightness(0) saturate(100%)
+      invert(62%) sepia(100%) saturate(3500%)
+      hue-rotate(355deg) brightness(1.2);
+  }
+
+  /* Yellow */
+  70%, 79% {
+    filter: brightness(0) saturate(100%)
+      invert(90%) sepia(95%) saturate(1100%)
+      hue-rotate(345deg) brightness(1.3);
+  }
+
+  /* Hold hot pink for the final 200ms */
+  80%, 100% {
+    filter: brightness(0) saturate(100%)
+      invert(35%) sepia(100%) saturate(5100%)
+      hue-rotate(305deg) brightness(1.25);
+  }
+}
+
+/* ============================================================
+   REMIX — SOFT COLOR TINT
+   Preserves the original logo's texture and shading.
+   ============================================================ */
+
+/* Disable the old solid-color filter animation */
+.remix-color-intro > img {
+  animation: none !important;
+  filter: none !important;
+}
+
+/* Keep the original logo visible beneath the tint */
+.remix-color-intro::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: #ff28b8;
+  mix-blend-mode: color;
+
+  /* Restrict the tint to the shape of the logo */
+  mask-image: var(--remix-logo-url);
+  -webkit-mask-image: var(--remix-logo-url);
+  mask-size: 100% 100%;
+  -webkit-mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+
+  animation: remix-soft-tint 650ms steps(1, end) both;
+}
+
+@keyframes remix-soft-tint {
+  0%, 12% {
+    background: #173fd8;
+    opacity: 0;
+  }
+
+  13%, 25% {
+    background: #173fd8;
+    opacity: .65;
+  }
+
+  26%, 40% {
+    background: #ff28b8;
+    opacity: .6;
+  }
+
+  41%, 55% {
+    background: #8dff57;
+    opacity: .55;
+  }
+
+  56%, 69% {
+    background: #ff8a1f;
+    opacity: .6;
+  }
+
+  70%, 79% {
+    background: #ffe87a;
+    opacity: .5;
+  }
+
+  80%, 100% {
+    background: #ff28b8;
+    opacity: .45;
+  }
+}
+
+/* ============================================================
+   REMIX — VIBRANT COLOR TINT
+   Stronger colors, original texture preserved.
+   ============================================================ */
+
+.remix-color-intro::after {
+  mix-blend-mode: color !important;
+  filter: saturate(1.8) brightness(1.15);
+  animation: remix-vibrant-tint 650ms steps(1, end) both !important;
+}
+
+@keyframes remix-vibrant-tint {
+  0%, 12% {
+    background: #173fd8;
+    opacity: 0;
+  }
+
+  /* Electric blue */
+  13%, 25% {
+    background: #174cff;
+    opacity: .95;
+  }
+
+  /* Hot pink */
+  26%, 40% {
+    background: #ff00a8;
+    opacity: .95;
+  }
+
+  /* Neon lime */
+  41%, 55% {
+    background: #a2ff37;
+    opacity: .92;
+  }
+
+  /* Orange */
+  56%, 69% {
+    background: #ff811a;
+    opacity: .95;
+  }
+
+  /* Yellow */
+  70%, 79% {
+    background: #ffe84a;
+    opacity: .90;
+  }
+
+  /* Final magenta hold */
+  80%, 100% {
+    background: #ff19c3;
+    opacity: .90;
+  }
+}
+
+/* Extra energy without flattening the logo */
+.remix-color-intro {
+  filter: saturate(1.2);
+}
+
+/* REMIX — 5-second startup fade from black */
+.remix-login-intro-fade {
+  animation: remix-startup-fade 5s linear both;
+}
+
+@keyframes remix-startup-fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+/* DNA PLAY: 7-second login fade instead of 5 seconds */
+.remix-login-intro-fade.remix-intro-seven {
+  animation-duration: 7s;
+}
